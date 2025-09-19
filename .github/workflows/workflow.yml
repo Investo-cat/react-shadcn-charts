@@ -1,4 +1,4 @@
-name: Ensure Version Bump
+name: Workflow
 
 on:
   pull_request:
