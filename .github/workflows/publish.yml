@@ -41,7 +41,7 @@ jobs:
           echo "PR_VERSION=$PR_VERSION" >> $GITHUB_ENV
 
           npm version $PR_VERSION --no-git-tag-version
-          npm publish --tag pr-${{ github.event.number }} --access public
+          npm publish --tag pr-${{ github.event.number }}-${{ github.run_number }} --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
