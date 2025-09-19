@@ -37,11 +37,11 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           # Example version: 1.2.3-pr.123.0
-          PR_VERSION=$(node -p "require('./package.json').version + '-pr.${{ github.event.number }}.${{ github.run_number }}'")
+          PR_VERSION=$(node -p "pr${{ github.event.number }}-${{ github.run_number }}")
           echo "PR_VERSION=$PR_VERSION" >> $GITHUB_ENV
 
           npm version $PR_VERSION --no-git-tag-version
-          npm publish --tag pr-${{ github.event.number }}-${{ github.run_number }} --access public
+          npm publish --tag pr${{ github.event.number }}-${{ github.run_number }} --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -52,7 +52,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const version = process.env.PR_VERSION;
-            const tag = `pr-${{ github.event.number }}-${{ github.run_number }}`;
+            const tag = `pr${{ github.event.number }}-${{ github.run_number }}`;
             const body = `✅ Published preview version: \`${version}\`
             You can install it with:
             \`\`\`bash
