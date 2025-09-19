@@ -51,7 +51,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const version = env.PR_VERSION;
+            const version = process.env.PR_VERSION;
             const tag = `pr-${{ github.event.number }}`;
             const body = `✅ Published preview version: \`${version}\`
             You can install it with:
