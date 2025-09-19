@@ -55,5 +55,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'Deployed test version: \`${{ version }}\` to GitHub Packages.'
+              body: `Deployed test version: \`${version}\` to GitHub Packages.`
             });
