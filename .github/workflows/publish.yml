@@ -36,7 +36,7 @@ jobs:
       - name: Publish PR preview
         if: github.event_name == 'pull_request'
         run: |
-          PR_VERSION=$(node -p "0.0.0-pr${{ github.event.number }}-${{ github.run_number }}")
+          PR_VERSION="0.0.0-pr${{ github.event.number }}-${{ github.run_number }}"
           echo "PR_VERSION=$PR_VERSION" >> $GITHUB_ENV
 
           npm version $PR_VERSION --no-git-tag-version
@@ -50,9 +50,10 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const version = process.env.PR_VERSION;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'Deployed test version: `0.0.0-pr${{ github.event.number }}-${{ github.run_number }} to GitHub Packages.'
+              body: 'Deployed test version: \`${version}\` to GitHub Packages.'
             });
