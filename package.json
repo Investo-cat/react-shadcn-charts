@@ -1,0 +1,36 @@
+{
+  "name": "react-shadcn-charts",
+  "version": "1.1.2",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint . --ext .ts,.tsx",
+    "bump-patch": "npm version patch",
+    "bump-minor": "npm version minor"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "recharts": "^2.10.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwind-variants": "^0.1.20",
+    "tailwindcss": "^3.4.3",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
