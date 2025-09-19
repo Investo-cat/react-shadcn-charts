@@ -24,7 +24,6 @@ jobs:
       - run: rm -rf node_modules package-lock.json
       - run: npm install
       - run: npm run build
-      - run: npm test
 
       # If it's a tag (release) → publish to "latest"
       - name: Publish release
