@@ -12,6 +12,7 @@ type Props = {
   colors?: string[];
   height?: number;
   className?: string;
+  isAnimationActive?: boolean;
 };
 
 export function PieChart({
@@ -25,6 +26,7 @@ export function PieChart({
     "var(--color-5, #9333ea)",
   ],
   className,
+  isAnimationActive = true,
 }: Props) {
   return (
     <div className={className}>
@@ -38,6 +40,7 @@ export function PieChart({
             cy="50%"
             outerRadius={100}
             label
+            isAnimationActive={isAnimationActive}
           >
             {data.map((_, index) => (
               <Cell

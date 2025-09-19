@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`PieChart matches snapshot 1`] = `
+<div>
+  <div>
+    <div
+      class="recharts-wrapper"
+      style="position: relative; cursor: default; width: 400px; height: 400px;"
+    >
+      <svg
+        class="recharts-surface"
+        cx="50%"
+        cy="50%"
+        height="400"
+        style="width: 100%; height: 100%;"
+        viewBox="0 0 400 400"
+        width="400"
+      >
+        <title />
+        <desc />
+        <defs>
+          <clippath
+            id="recharts1-clip"
+          >
+            <rect
+              height="390"
+              width="390"
+              x="5"
+              y="5"
+            />
+          </clippath>
+        </defs>
+        <g
+          class="recharts-layer recharts-pie"
+          tabindex="0"
+        >
+          <g
+            class="recharts-layer recharts-pie-sector"
+            tabindex="-1"
+          >
+            <path
+              class="recharts-sector"
+              cx="200"
+              cy="200"
+              d="M 300,200
+    A 100,100,0,
+    0,0,
+    106.03073792140917,165.79798566743312
+  L 200,200 Z"
+              fill="var(--color-1, #2563eb)"
+              name="Apples"
+              role="img"
+              stroke="#fff"
+              tabindex="-1"
+            />
+          </g>
+          <g
+            class="recharts-layer recharts-pie-sector"
+            tabindex="-1"
+          >
+            <path
+              class="recharts-sector"
+              cx="200"
+              cy="200"
+              d="M 106.03073792140917,165.79798566743312
+    A 100,100,0,
+    0,0,
+    217.364817766693,298.48077530122083
+  L 200,200 Z"
+              fill="var(--color-2, #16a34a)"
+              name="Bananas"
+              role="img"
+              stroke="#fff"
+              tabindex="-1"
+            />
+          </g>
+          <g
+            class="recharts-layer recharts-pie-sector"
+            tabindex="-1"
+          >
+            <path
+              class="recharts-sector"
+              cx="200"
+              cy="200"
+              d="M 217.364817766693,298.48077530122083
+    A 100,100,0,
+    0,0,
+    300,200.00000000000003
+  L 200,200 Z"
+              fill="var(--color-3, #f59e0b)"
+              name="Cherries"
+              role="img"
+              stroke="#fff"
+              tabindex="-1"
+            />
+          </g>
+          <g
+            class="recharts-layer recharts-pie-labels"
+          >
+            <g
+              class="recharts-layer"
+            >
+              <path
+                class="recharts-curve recharts-pie-label-line"
+                cx="200"
+                cy="200"
+                d="M217.36481776669305,101.5192246987792L220.83778132003164,81.82306963853503"
+                fill="none"
+                name="Apples"
+                stroke="var(--color-1, #2563eb)"
+              />
+              <text
+                alignment-baseline="middle"
+                class="recharts-text recharts-pie-label-text"
+                cx="200"
+                cy="200"
+                fill="var(--color-1, #2563eb)"
+                name="Apples"
+                stroke="none"
+                text-anchor="start"
+                x="220.83778132003164"
+                y="81.82306963853503"
+              >
+                <tspan
+                  dy="0em"
+                  x="220.83778132003164"
+                >
+                  40
+                </tspan>
+              </text>
+            </g>
+            <g
+              class="recharts-layer"
+            >
+              <path
+                class="recharts-curve recharts-pie-label-line"
+                cx="200"
+                cy="200"
+                d="M123.39555568810219,264.27876096865396L108.07466682572263,277.1345131623847"
+                fill="none"
+                name="Bananas"
+                stroke="var(--color-2, #16a34a)"
+              />
+              <text
+                alignment-baseline="middle"
+                class="recharts-text recharts-pie-label-text"
+                cx="200"
+                cy="200"
+                fill="var(--color-2, #16a34a)"
+                name="Bananas"
+                stroke="none"
+                text-anchor="end"
+                x="108.07466682572263"
+                y="277.1345131623847"
+              >
+                <tspan
+                  dy="0em"
+                  x="108.07466682572263"
+                >
+                  30
+                </tspan>
+              </text>
+            </g>
+            <g
+              class="recharts-layer"
+            >
+              <path
+                class="recharts-curve recharts-pie-label-line"
+                cx="200"
+                cy="200"
+                d="M276.6044443118978,264.27876096865396L291.92533317427734,277.13451316238474"
+                fill="none"
+                name="Cherries"
+                stroke="var(--color-3, #f59e0b)"
+              />
+              <text
+                alignment-baseline="middle"
+                class="recharts-text recharts-pie-label-text"
+                cx="200"
+                cy="200"
+                fill="var(--color-3, #f59e0b)"
+                name="Cherries"
+                stroke="none"
+                text-anchor="start"
+                x="291.92533317427734"
+                y="277.13451316238474"
+              >
+                <tspan
+                  dy="0em"
+                  x="291.92533317427734"
+                >
+                  20
+                </tspan>
+              </text>
+            </g>
+          </g>
+        </g>
+      </svg>
+      <div
+        class="recharts-tooltip-wrapper"
+        style="visibility: hidden; pointer-events: none; position: absolute; top: 0px; left: 0px;"
+        tabindex="-1"
+      >
+        <div
+          class="recharts-default-tooltip"
+          style="margin: 0px; padding: 10px; background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); white-space: nowrap;"
+        >
+          <p
+            class="recharts-tooltip-label"
+            style="margin: 0px;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

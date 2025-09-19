@@ -15,7 +15,7 @@
     "isolatedModules": true,
     "resolveJsonModule": true,
     "lib": ["ES2020", "DOM"],
-    "types": ["react", "react-dom"]
+    "types": ["react", "react-dom", "jest"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "example"]
