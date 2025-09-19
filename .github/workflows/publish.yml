@@ -36,33 +36,23 @@ jobs:
       - name: Publish PR preview
         if: github.event_name == 'pull_request'
         run: |
-          # Example version: 1.2.3-pr.123.0
-          PR_VERSION=$(node -p "pr${{ github.event.number }}-${{ github.run_number }}")
+          PR_VERSION=$(node -p "0.0.0-pr${{ github.event.number }}-${{ github.run_number }}")
           echo "PR_VERSION=$PR_VERSION" >> $GITHUB_ENV
 
           npm version $PR_VERSION --no-git-tag-version
-          npm publish --tag pr${{ github.event.number }}-${{ github.run_number }} --access public
+          npm publish --tag test --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Comment PR with install command
+      - name: Comment on PR
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const version = process.env.PR_VERSION;
-            const tag = `pr${{ github.event.number }}-${{ github.run_number }}`;
-            const body = `✅ Published preview version: \`${version}\`
-            You can install it with:
-            \`\`\`bash
-            npm install react-shadcn-charts@${tag}
-            \`\`\`
-            `;
-
-            await github.rest.issues.createComment({
+            github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body
+              body: 'Deployed test version: `0.0.0-pr${{ github.event.number }}-${{ github.run_number }} to GitHub Packages.'
             });
