@@ -1,6 +1,10 @@
 name: Publish to npm
 
 on:
+  workflow_run:
+    workflows: ["Unit Tests"]
+    types:
+      - completed
   push:
     branches:
       - main
