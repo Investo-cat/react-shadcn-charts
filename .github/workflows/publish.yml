@@ -7,7 +7,7 @@ on:
   pull_request:
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
 
 jobs:
@@ -28,7 +28,16 @@ jobs:
       # If it's a tag (release) → publish to "latest"
       - name: Publish release
         if: startsWith(github.ref, 'refs/tags/v')
-        run: npm publish --access public
+        run: |
+          VERSION="v$(node -p "require('./package.json').version")"
+          echo "Publishing $VERSION"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag "$VERSION"
+          git push origin "$VERSION"
+
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
