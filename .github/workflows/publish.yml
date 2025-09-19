@@ -52,7 +52,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const version = process.env.PR_VERSION;
-            const tag = `pr-${{ github.event.number }}`;
+            const tag = `pr-${{ github.event.number }}-${{ github.run_number }}`;
             const body = `✅ Published preview version: \`${version}\`
             You can install it with:
             \`\`\`bash
