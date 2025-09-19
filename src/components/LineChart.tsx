@@ -15,6 +15,7 @@ type Props = {
   color?: string;
   type?: CurveType;
   className?: string;
+  isAnimationActive?: boolean;
 };
 
 export function LineChart({
@@ -24,6 +25,7 @@ export function LineChart({
   color = "var(--color-line, #2563eb)",
   type = "natural",
   className,
+  isAnimationActive = true,
 }: Props) {
   return (
     <div className={className}>
@@ -53,6 +55,7 @@ export function LineChart({
             stroke={color}
             strokeWidth={2}
             dot={false}
+            isAnimationActive={isAnimationActive}
           />
         </ReLineChart>
       </ResponsiveContainer>
