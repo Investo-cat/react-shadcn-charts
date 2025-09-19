@@ -45,8 +45,15 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const version = process.env.PR_VERSION;
             const tag = `pr-${{ github.event.number }}`;
-            const body = `✅ Published preview version: \`${tag}\``;
+            const body = `✅ Published preview version: \`${version}\`
+            You can install it with:
+            \`\`\`bash
+            npm install react-shadcn-charts@${tag}
+            \`\`\`
+            `;
+
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
